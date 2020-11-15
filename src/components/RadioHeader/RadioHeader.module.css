@@ -1,0 +1,14 @@
+.container {
+	min-height: 160px;
+	display: flex;
+	background-color: var(--clr-accent);
+	justify-content: space-around;
+	align-items: center;
+	border-top: 2px solid #f1be81;
+}
+
+.header {
+	font-size: var(--fs-large);
+	text-transform: uppercase;
+	color: var(--clr-white);
+}

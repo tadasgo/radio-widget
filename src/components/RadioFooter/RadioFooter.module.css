@@ -1,0 +1,23 @@
+.container {
+	min-height: 160px;
+	background-color: var(--clr-main-darker);
+	border-top: 2px solid var(--clr-border-lighter);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.surtitle {
+	font-size: var(--fs-small);
+	color: var(--clr-accent);
+	margin: 0;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.title {
+	font-size: var(--fs-large);
+	margin: 0;
+	color: var(--clr-greyish);
+}

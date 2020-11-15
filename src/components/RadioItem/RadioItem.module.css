@@ -1,0 +1,45 @@
+.container {
+  border-bottom: 2px solid var(--clr-border);
+}
+
+.container:last-child {
+  border-bottom: none;
+}
+
+.radioItem {
+  font-size: var(--fs-large);
+  color: var(--clr-greyish);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+.activeItem {
+  height: 336px;
+}
+
+.radioImg {
+  border: 5px var(--clr-greyish) solid;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.radioImg:hover {
+  transform: scale(1.05);
+}
+
+.radioFrequency {
+  font-weight: bold;
+}
+
+.radioStation {
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.radioStation:hover {
+  transform: scale(1.05);
+}
