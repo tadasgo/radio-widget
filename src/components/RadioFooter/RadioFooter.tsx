@@ -1,20 +1,13 @@
 import React from 'react'
+import {
+  SingleStationState,
+  StationsState,
+} from '../../redux/stations/stations.reducer'
 import styles from './RadioFooter.module.css'
 
-interface IProps {
-  stations: IStation[]
-}
-
-interface IStation {
-  id: number
-  name: string
-  frequency: number
-  active: boolean
-}
-
-const RadioFooter = ({ stations }: IProps) => {
+const RadioFooter = ({ stations }: StationsState) => {
   const activeStation = stations.find(
-    (station: IStation) => station.active === true,
+    (station: SingleStationState) => station.active === true,
   )
   const { container, surtitle, title } = styles
   if (activeStation) {

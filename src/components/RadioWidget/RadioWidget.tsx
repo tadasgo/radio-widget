@@ -1,29 +1,25 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { StationsState } from '../../redux/stations/stations.reducer'
 import RadioFooter from '../RadioFooter/RadioFooter'
 import RadioHeader from '../RadioHeader/RadioHeader'
 import RadioItem from '../RadioItem/RadioItem'
 import styles from './RadioWidget.module.css'
 
-interface IProps {
-  stations: IStation[]
-}
-
-interface IStation {
-  id: number
-  name: string
-  frequency: number
-  active: boolean
-}
-
-const RadioWidget = ({ stations }: IProps) => {
+const RadioWidget = () => {
   const { container, radio, radioList } = styles
+
+  // redux hook. Specify value of state and return value
+  const stations = useSelector<StationsState, StationsState['stations']>(
+    (state) => state.stations,
+  )
+
   return (
     <div className={container}>
       <div className={radio}>
         <RadioHeader />
         <div className={radioList}>
-          {stations.map((station: IStation) => (
+          {stations.map((station) => (
             <RadioItem key={station.id} station={station} />
           ))}
         </div>
@@ -33,9 +29,4 @@ const RadioWidget = ({ stations }: IProps) => {
   )
 }
 
-// fix later
-const mapStateToProps = (state: any) => ({
-  stations: state.stations.stations,
-})
-
-export default connect(mapStateToProps)(RadioWidget)
+export default RadioWidget

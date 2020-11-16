@@ -9,7 +9,7 @@ export interface SingleStationState {
   active: boolean
 }
 
-interface StationsState {
+export interface StationsState {
   stations: SingleStationState[]
 }
 

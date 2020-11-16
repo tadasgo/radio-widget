@@ -1,20 +1,32 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { toggleStationAction } from '../../redux/stations/stations.actions'
 import CustomBtn from '../CustomBtn/CustomBtn'
 import minusBtn from '../../assets/minus.png'
 import plusBtn from '../../assets/plus.png'
-import {
-  container,
-  radioFrequency,
-  radioItem,
-  radioStation,
-  radioImg,
-  activeItem,
-} from './RadioItem.module.css'
+import styles from './RadioItem.module.css'
+import { SingleStationState } from '../../redux/stations/stations.reducer'
 
-const RadioItem = ({ station, toggleStation }) => {
+interface OwnProps {
+  station: SingleStationState
+}
+
+const RadioItem = ({ station }: OwnProps) => {
   const { name, frequency, active } = station
+  const {
+    container,
+    radioFrequency,
+    radioItem,
+    radioStation,
+    radioImg,
+    activeItem,
+  } = styles
+
+  const dispatch = useDispatch()
+  const toggleStation = (station: SingleStationState) => {
+    dispatch(toggleStationAction(station))
+  }
+
   return (
     <div className={container}>
       {active ? (
@@ -52,8 +64,4 @@ const RadioItem = ({ station, toggleStation }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleStation: (station) => dispatch(toggleStationAction(station)),
-})
-
-export default connect(null, mapDispatchToProps)(RadioItem)
+export default RadioItem
