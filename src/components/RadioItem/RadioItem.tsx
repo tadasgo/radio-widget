@@ -5,7 +5,7 @@ import CustomBtn from '../CustomBtn/CustomBtn'
 import minusBtn from '../../assets/minus.png'
 import plusBtn from '../../assets/plus.png'
 import styles from './RadioItem.module.css'
-import { SingleStationState } from '../../redux/stations/stations.reducer'
+import { SingleStationState } from '../../redux/stations/stations.types'
 
 interface OwnProps {
   station: SingleStationState
@@ -23,8 +23,8 @@ const RadioItem = ({ station }: OwnProps) => {
   } = styles
 
   const dispatch = useDispatch()
-  const toggleStation = (station: SingleStationState) => {
-    dispatch(toggleStationAction(station))
+  const toggleStation = (providedStation: SingleStationState) => {
+    dispatch(toggleStationAction(providedStation))
   }
 
   return (

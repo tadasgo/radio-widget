@@ -1,4 +1,4 @@
-import { SingleStationState } from './stations.reducer'
+import { SingleStationState } from './stations.types'
 
 export interface ToggleStationAction {
   type: 'TOGGLE_STATION'

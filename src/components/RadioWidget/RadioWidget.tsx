@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { StationsState } from '../../redux/stations/stations.reducer'
+import { StationsState } from '../../redux/stations/stations.types'
 import RadioFooter from '../RadioFooter/RadioFooter'
 import RadioHeader from '../RadioHeader/RadioHeader'
 import RadioItem from '../RadioItem/RadioItem'

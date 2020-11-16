@@ -2,7 +2,7 @@ import React from 'react'
 import {
   SingleStationState,
   StationsState,
-} from '../../redux/stations/stations.reducer'
+} from '../../redux/stations/stations.types'
 import styles from './RadioFooter.module.css'
 
 const RadioFooter = ({ stations }: StationsState) => {
