@@ -1,20 +1,20 @@
 import React from 'react'
 import styles from './RadioFooter.module.css'
 
-interface Props {
-  stations: Station[]
+interface IProps {
+  stations: IStation[]
 }
 
-interface Station {
+interface IStation {
   id: number
   name: string
   frequency: number
   active: boolean
 }
 
-const RadioFooter = ({ stations }: Props) => {
+const RadioFooter = ({ stations }: IProps) => {
   const activeStation = stations.find(
-    (station: Station) => station.active === true,
+    (station: IStation) => station.active === true,
   )
   const { container, surtitle, title } = styles
   if (activeStation) {
