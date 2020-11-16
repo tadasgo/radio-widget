@@ -19,7 +19,7 @@
 }
 
 .radioList {
-  margin: 20px 40px 0px;
+  padding: 20px 40px 0px;
   overflow-y: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
